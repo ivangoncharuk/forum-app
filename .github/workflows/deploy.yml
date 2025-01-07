@@ -1,4 +1,4 @@
-name: Deploy Project
+name: Deploy Frontend Only
 
 on:
   push:
@@ -18,23 +18,7 @@ jobs:
           node-version: 18
       - name: Install Dependencies
         run: cd frontend && npm install
-      - name: Deploy to Vercel
+      - name: Deploy Frontend to Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: cd frontend && npx vercel --prod
-
-  # apparently this is already handled by deno deploy...
-  # backend:
-  #   name: Deploy Backend
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout Code
-  #       uses: actions/checkout@v3
-  #     - name: Setup Deno
-  #       uses: denoland/setup-deno@v1
-  #       with:
-  #         deno-version: v1.x
-  #     - name: Deploy to Deno
-  #       env:
-  #         DENO_DEPLOY_TOKEN: ${{ secrets.DENO_DEPLOY_TOKEN }}
-  #       run: cd backend && deno deploy
+        run: cd frontend && npx vercel --prod --yes
