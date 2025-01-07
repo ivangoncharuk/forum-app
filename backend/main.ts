@@ -3,6 +3,11 @@ import { Application, Router } from "https://deno.land/x/oak/mod.ts";
 const app = new Application();
 const router = new Router();
 
+
+router.get("/api/test", (ctx) => {
+  ctx.response.body = { message: "Hello from Deno backend!" };
+});
+
 // Define routes
 router
   .get("/api/threads", async (context) => {
