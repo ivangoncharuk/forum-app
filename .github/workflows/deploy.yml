@@ -12,13 +12,20 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
+
       - name: Install Dependencies
-        run: cd frontend && npm install
+        run: |
+          cd frontend
+          npm install
+
       - name: Deploy Frontend to Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: cd frontend && npx vercel --prod --yes
+        run: |
+          cd frontend
+          npx vercel --prod --yes --token=$VERCEL_TOKEN
