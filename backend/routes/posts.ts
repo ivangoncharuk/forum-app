@@ -1,0 +1,1 @@
+// Example route for posts endpoints
