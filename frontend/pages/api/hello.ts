@@ -4,5 +4,5 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  res.status(200).json({ message: "Hello from the API! this is from frontend/pages/api\nHave a good day!" });
+  res.status(200).json({ message: "Hello! (from hello.ts)" });
 }
