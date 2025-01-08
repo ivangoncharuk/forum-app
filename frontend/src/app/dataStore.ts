@@ -16,7 +16,7 @@ export interface Reply {
   }
   
   // Very naive store
-  let threads: Thread[] = [
+  const threads: Thread[] = [
     {
       id: "1",
       title: "Welcome Thread",
