@@ -1,6 +1,5 @@
 // src/app/board/page.tsx
 "use client";
-export const dynamic = "force-client";
 
 import Link from "next/link";
 import { getThreads } from "../dataStore";
