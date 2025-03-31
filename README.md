@@ -45,7 +45,7 @@ The project is a minimalist image board application inspired by platforms like 4
 
 ### Database
 - **Type**: PostgreSQL
-- ORM: Drizzle
+- ORM: Prisma
 
 ### Security
 - **Cloudflare**:
